@@ -33,6 +33,11 @@ using namespace __cxxabiv1;
 
 #include "unwind-pe.h"
 
+extern "C" void _Unwind_DeleteException(_Unwind_Exception *) {}
+extern "C" _Unwind_Reason_Code _Unwind_RaiseException(_Unwind_Exception *) {
+        return _URC_FATAL_PHASE1_ERROR;
+}
+
 
 struct lsda_header_info
 {
