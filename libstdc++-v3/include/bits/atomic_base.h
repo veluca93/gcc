@@ -30,6 +30,46 @@
 #ifndef _GLIBCXX_ATOMIC_BASE_H
 #define _GLIBCXX_ATOMIC_BASE_H 1
 
+
+#ifndef __GCC_ATOMIC_TEST_AND_SET_TRUEVAL
+#define __GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1
+#endif
+
+#ifndef __GCC_ATOMIC_BOOL_LOCK_FREE
+#define __GCC_ATOMIC_BOOL_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_CHAR8_T_LOCK_FREE
+#define __GCC_ATOMIC_CHAR8_T_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_CHAR16_T_LOCK_FREE
+#define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_CHAR32_T_LOCK_FREE
+#define __GCC_ATOMIC_CHAR32_T_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_CHAR_LOCK_FREE
+#define __GCC_ATOMIC_CHAR_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_INT_LOCK_FREE
+#define __GCC_ATOMIC_INT_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_LLONG_LOCK_FREE
+#define __GCC_ATOMIC_LLONG_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_LONG_LOCK_FREE
+#define __GCC_ATOMIC_LONG_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_POINTER_LOCK_FREE
+#define __GCC_ATOMIC_POINTER_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_SHORT_LOCK_FREE
+#define __GCC_ATOMIC_SHORT_LOCK_FREE 2
+#endif
+#ifndef __GCC_ATOMIC_WCHAR_T_LOCK_FREE
+#define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
+#endif
+
+
 #pragma GCC system_header
 
 #include <bits/c++config.h>
