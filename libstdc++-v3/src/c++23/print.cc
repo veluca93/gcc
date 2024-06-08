@@ -100,7 +100,7 @@ namespace
 #ifdef _WIN32
     if (auto fb = dynamic_cast<filebuf*>(sb))
       return check_for_console(fb->native_handle());
-#elifdef _GLIBCXX_HAVE_UNISTD_H
+#elif defined(_GLIBCXX_HAVE_UNISTD_H) && not defined(__wasi__)
     if (auto fb = dynamic_cast<filebuf*>(sb))
       if (int fd = fb->native_handle(); fd >= 0 && ::isatty(fd))
 	return ::fdopen(::dup(fd), "w"); // Caller must call fclose.

@@ -71,7 +71,7 @@ __cxxabiv1::__cxa_get_globals() _GLIBCXX_NOTHROW
 namespace
 {
   // Single-threaded fallback buffer.
-  __constinit __cxa_eh_globals eh_globals;
+  __cxa_eh_globals eh_globals;
 }
 
 #if __GTHREADS

@@ -114,7 +114,7 @@ __gthrw(pthread_join)
 __gthrw(pthread_equal)
 __gthrw(pthread_self)
 __gthrw(pthread_detach)
-#ifndef __BIONIC__
+#if not defined(__BIONIC__) && not defined(__wasi__)
 __gthrw(pthread_cancel)
 #endif
 __gthrw(sched_yield)
@@ -251,7 +251,7 @@ __gthrw2(__gthrw_(__pthread_key_create),
 	 __pthread_key_create,
 	 pthread_key_create)
 # define GTHR_ACTIVE_PROXY	__gthrw_(__pthread_key_create)
-#elif defined (__BIONIC__)
+#elif defined (__BIONIC__) || defined (__wasi__)
 # define GTHR_ACTIVE_PROXY	__gthrw_(pthread_create)
 #else
 # define GTHR_ACTIVE_PROXY	__gthrw_(pthread_cancel)
