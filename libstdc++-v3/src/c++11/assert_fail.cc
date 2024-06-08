@@ -28,7 +28,7 @@
 #ifdef _GLIBCXX_VERBOSE_ASSERT
 namespace std
 {
-  [[__noreturn__]]
+  __attribute__((__noreturn__))
   void
   __glibcxx_assert_fail(const char* file, int line,
 			const char* function, const char* condition) noexcept
