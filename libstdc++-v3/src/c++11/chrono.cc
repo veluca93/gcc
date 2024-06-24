@@ -24,6 +24,7 @@
 
 #include <bits/c++config.h>
 #include <chrono>
+#include <stdio.h>
 
 // Conditional inclusion of sys/time.h for gettimeofday
 #if !defined(_GLIBCXX_USE_CLOCK_MONOTONIC) && \
@@ -51,7 +52,7 @@ _GLIBCXX_BEGIN_INLINE_ABI_NAMESPACE(_V2)
     system_clock::now() noexcept
     {
 #ifdef _GLIBCXX_USE_CLOCK_REALTIME
-      timespec tp;
+      timespec tp = {};
       // -EINVAL, -EFAULT
 #ifdef _GLIBCXX_USE_CLOCK_GETTIME_SYSCALL
       syscall(SYS_clock_gettime, CLOCK_REALTIME, &tp);
